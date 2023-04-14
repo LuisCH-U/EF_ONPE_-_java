@@ -21,12 +21,12 @@ public class svlPresidencial extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8");
     	HttpSession session = request.getSession();
-    	Dao.OnpeDao daoonpe= new Dao.OnpeDao();
     	
     	String id =request.getParameter("id");
-
+    	Object data =null;
     	
     	session.setAttribute("id", id);
+    	session.setAttribute("data", data);
     	
 		response.sendRedirect("presidenciales.jsp");
 		

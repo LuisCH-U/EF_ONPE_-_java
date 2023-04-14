@@ -24,7 +24,7 @@
 				<nav class="navbar-collapse bs-navbar-collapse collapse" aria-expanded="false">
 					<ul class="nav navbar-nav">
 						<li class="bt-azul">
-							<a href="presidenciales.jsp">PRESIDENCIAL</a>
+							<a href="svlPresidencial">PRESIDENCIAL</a>
 						</li>
 						<li class="bt-amarillo act-amarillo">
 							<a href="svlActas">ACTAS</a>

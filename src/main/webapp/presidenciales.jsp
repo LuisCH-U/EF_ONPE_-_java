@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%
 String id = (String) session.getAttribute("id");
+String[] data = (String[]) session.getAttribute("data");
 %>
 <head>
 	<title>ONPE -Oficina Nacional de Procesos Electorales</title>
@@ -46,7 +47,7 @@ String id = (String) session.getAttribute("id");
 							<ul>
 								<li><a href="svlPresidencial" class="act-izq">RESUMEN GENERAL</a></li>
 								<li><a href="svlPresidencial?id=1">RESULTADOS PRESIDENCIALES</a></li>
-								<li><a href="svlPresidencial?id=ambito">RESULTADOS POR TIPO DE VOTOS</a></li>
+								<li><a href="svlPresidencial?id=2">RESULTADOS POR TIPO DE VOTOS</a></li>
 							</ul>
 						</div>
 					</div>
@@ -248,8 +249,10 @@ String id = (String) session.getAttribute("id");
 									</div>
 								</div>
 							</div>
+							<p>&nbsp;</p>
 					<button class="btn btn-primary pull-right" type="button" onclick="VerGraficoBarras()">Ver gráfico barras</button>
 					<br>
+					
 					<div class="col-xs-12">
 						<div id="page-wrap">
 							<table class="table03">
@@ -528,11 +531,11 @@ String id = (String) session.getAttribute("id");
 		<% } %>
 		
 							
-		<%if (  id != null && id != null  ) {%>
+		<%if (   id != null && data == null) {%>
 			
 			<div class="col-xs-12">
 				<p class="subtitle">GRÁFICO DE RESULTADOS DE VOTOS VÁLIDOS, BLANCOS Y NULOS</p>
-					<form id="frmBuscar" name="frmBuscar" action="svlPresidencial?=ambito" method="post" class="horizontal-form">
+					<form id="frmBuscar" name="frmBuscar" action="presidenciales.jsp" method="post" class="horizontal-form">
 						<div id="divUbicombo" class="row">
 								<div class="col-md-3" style="display:block">
 									<label class="control-label">Ámbito:</label>
